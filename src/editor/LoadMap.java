@@ -11,8 +11,8 @@ public class LoadMap extends JFrame{
 	private static final long serialVersionUID = -2813834136126267964L;
 	private JPanel container = new JPanel();
 	private JScrollPane scroller;
-	private JList saves;
-	private DefaultListModel saveslist;
+	private JList<String> saves;
+	private DefaultListModel<String> saveslist;
 	private ImageIcon eye = new ImageIcon("Eye.png");
 	private JButton loadgame = new JButton("LOAD");
 	public LoadMap(ArrayList<File> files, EditorController c){
@@ -21,12 +21,12 @@ public class LoadMap extends JFrame{
 		loadgame.setForeground(Color.WHITE);
 		loadgame.setBackground(new Color(255,0,50));
 		scroller = new JScrollPane();
-		saveslist = new DefaultListModel();
+		saveslist = new DefaultListModel<>();
 		Iterator<File> iter = files.iterator();
 		while(iter.hasNext()){
 			saveslist.addElement(iter.next().getName().replace(".map", ""));
 		}
-		saves = new JList(saveslist);
+		saves = new JList<>(saveslist);
 		saves.setVisibleRowCount(7);
 		saves.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		saves.setFixedCellWidth(160);
