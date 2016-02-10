@@ -9,6 +9,8 @@ import java.awt.Graphics2D;
 import java.awt.Toolkit;
 
 import javax.swing.*;
+
+import fi.ukkosnetti.breaker.resource.ImageResource;
 /*
  * Simple class for About view.
  */
@@ -28,7 +30,6 @@ public class EditorAbout extends JFrame{
 			g2d.fillRect(0, 0, this.getWidth(), this.getHeight());
 		}
 	};
-	private ImageIcon eye = new ImageIcon("Eye.png");
 	public EditorAbout(){
 		// Setting component properties.
 		abouttxt.setOpaque(false);
@@ -60,7 +61,7 @@ public class EditorAbout extends JFrame{
                           (screenSize.height - frameSize.height) / 2);
 		pack();
 		setResizable(false);
-		this.setIconImage(eye.getImage());
+		this.setIconImage(ImageResource.LOGO.getImage());
 		setVisible(true);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}

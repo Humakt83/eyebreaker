@@ -1,11 +1,12 @@
 package fi.ukkosnetti.breaker.game.ui;
 import java.awt.*;
 import javax.swing.*;
+
+import fi.ukkosnetti.breaker.resource.ImageResource;
 public class Help extends JFrame{
 	private static final long serialVersionUID = 8027531720754221869L;
-	private ImageIcon backgroundimage = new ImageIcon("Help.png");
+	private ImageIcon backgroundimage = ImageResource.HELP;
 	private JPanel topPanel = new JPanel();
-	private ImageIcon eye = new ImageIcon("Eye.png");
 	private JPanel drawingpanel = new JPanel(){
 		static final long serialVersionUID = 1;
 		protected void paintComponent(Graphics g){
@@ -29,7 +30,7 @@ public class Help extends JFrame{
 		this.setTitle("Help");
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setResizable(false);
-		this.setIconImage(eye.getImage());
+		this.setIconImage(ImageResource.LOGO.getImage());
 		this.setVisible(true);
 	}
 }

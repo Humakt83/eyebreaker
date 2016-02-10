@@ -1,6 +1,8 @@
 package fi.ukkosnetti.breaker.editor;
 import javax.swing.*;
 
+import fi.ukkosnetti.breaker.resource.ImageResource;
+
 import java.awt.*;
 public class SaveMap extends JFrame{
 	/**
@@ -9,7 +11,6 @@ public class SaveMap extends JFrame{
 	private static final long serialVersionUID = -1672782695939979071L;
 	private JTextField savename = new JTextField();
 	private JButton save = new JButton("SAVE");
-	private ImageIcon eye = new ImageIcon("Eye.png");
 	private JPanel container = new JPanel();
 	public SaveMap(EditorController c){
 		savename.setColumns(13);
@@ -24,7 +25,7 @@ public class SaveMap extends JFrame{
 		this.setVisible(true);
 		this.setResizable(false);
 		this.setSize(180, 100);
-		this.setIconImage(eye.getImage());
+		this.setIconImage(ImageResource.LOGO.getImage());
 		this.setTitle("Save Game");
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();

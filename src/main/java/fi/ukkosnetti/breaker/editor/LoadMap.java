@@ -1,6 +1,8 @@
 package fi.ukkosnetti.breaker.editor;
 import javax.swing.*;
 
+import fi.ukkosnetti.breaker.resource.ImageResource;
+
 import java.util.*;
 import java.io.*;
 import java.awt.*;
@@ -13,7 +15,6 @@ public class LoadMap extends JFrame{
 	private JScrollPane scroller;
 	private JList<String> saves;
 	private DefaultListModel<String> saveslist;
-	private ImageIcon eye = new ImageIcon("Eye.png");
 	private JButton loadgame = new JButton("LOAD");
 	public LoadMap(ArrayList<File> files, EditorController c){
 		loadgame.setActionCommand("LOADTHIS");
@@ -39,7 +40,7 @@ public class LoadMap extends JFrame{
 		this.setVisible(true);
 		this.setResizable(false);
 		this.setSize(180, 200);
-		this.setIconImage(eye.getImage());
+		this.setIconImage(ImageResource.LOGO.getImage());
 		this.setTitle("Load Game");
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();

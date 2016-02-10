@@ -3,6 +3,8 @@ package fi.ukkosnetti.breaker.editor;
 import java.awt.*;
 
 import javax.swing.*;
+
+import fi.ukkosnetti.breaker.resource.ImageResource;
 public class EditorView extends JFrame{
 	private static final long serialVersionUID = 2099886291871181934L;
 	private DrawingArea da = new DrawingArea();;
@@ -15,7 +17,6 @@ public class EditorView extends JFrame{
 	private JMenuItem exitprog;
 	private JMenuItem save;
 	private JMenuItem load;
-	private ImageIcon eye = new ImageIcon("Eye.png");
 	public EditorView(){
 		newmap = new JMenuItem("New Level");
 		exitprog = new JMenuItem("Exit");
@@ -51,7 +52,7 @@ public class EditorView extends JFrame{
         }
 		this.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
 		this.setResizable(false);
-		this.setIconImage(eye.getImage());
+		this.setIconImage(ImageResource.LOGO.getImage());
 		this.setTitle( "EyeBreaker Editor" );
 		this.setLayout(new GridLayout());
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);

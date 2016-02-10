@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import fi.ukkosnetti.breaker.game.concept.ScoreSphere;
 import fi.ukkosnetti.breaker.game.level.Box;
+import fi.ukkosnetti.breaker.resource.ImageResource;
 
 import java.awt.geom.*;
 import java.util.*;
@@ -33,7 +34,6 @@ public class DrawingArea extends JPanel{
 	private String nameplayer2 = "Player 2";
 	private String scoreString = "0 - 0";
 	private boolean pong = false, vs = false;
-	private ImageIcon backgroundimage = new ImageIcon("bg.png");
 	private Color batBorderColor = new Color(255,255,255);
 	private GradientPaint batPaint = new GradientPaint(
 		    0, 0, new Color(150,0,255),
@@ -126,7 +126,7 @@ public class DrawingArea extends JPanel{
 			    RenderingHints.VALUE_ANTIALIAS_ON);
 		else g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
 		Dimension d = this.getSize();
-		g2d.drawImage(backgroundimage.getImage(), 0, 0, d.width, d.height, null);
+		g2d.drawImage(ImageResource.BACKGROUND.getImage(), 0, 0, d.width, d.height, null);
 		//drawing ball
 		if(!hotRed)g2d.setColor(Color.WHITE);
 		else g2d.setColor(Color.RED);

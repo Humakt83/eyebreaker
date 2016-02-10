@@ -8,6 +8,7 @@ import java.awt.Graphics2D;
 import javax.swing.*;
 
 import fi.ukkosnetti.breaker.game.level.Box;
+import fi.ukkosnetti.breaker.resource.ImageResource;
 
 import java.util.*;
 public class DrawingArea extends JPanel implements Runnable{
@@ -17,7 +18,6 @@ public class DrawingArea extends JPanel implements Runnable{
 	 */
 	private String reason;
 	private static final long serialVersionUID = 4320380334661237698L;
-	private ImageIcon backgroundimage = new ImageIcon("bg.png");
 	private Box activeBox;
 	private int x = 0, y = 0, amount = 0;
 	private List<Box> boxes;
@@ -40,7 +40,7 @@ public class DrawingArea extends JPanel implements Runnable{
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D)g;
 		Dimension d = this.getSize();
-		g2d.drawImage(backgroundimage.getImage(), 0, 0, d.width, d.height, null);
+		g2d.drawImage(ImageResource.BACKGROUND.getImage(), 0, 0, d.width, d.height, null);
 		g2d.setPaint(new GradientPaint(0, 0, new Color(200,200,200),
 				0, 40, new Color(150,150,150)));
 		g2d.fillRect(0, 0, d.width, 40);

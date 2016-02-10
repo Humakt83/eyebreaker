@@ -5,6 +5,7 @@ import javax.swing.*;
 import javax.swing.table.*;
 
 import fi.ukkosnetti.breaker.game.controller.Controller;
+import fi.ukkosnetti.breaker.resource.ImageResource;
 
 import java.util.*;
 public class View extends JFrame{ 
@@ -61,7 +62,7 @@ public class View extends JFrame{
 	private JTextField player1name = new JTextField("Player 1", 15);
 	private JTextField player2name = new JTextField("Player 2", 15); 
 	private JButton confirmplayerchanges = new JButton("OK");
-	private ImageIcon eye = new ImageIcon("Eye.png");
+	private ImageIcon eye = ImageResource.LOGO;
 	//JFrame components for Highscore view:
 	private JFrame highscoreview = new JFrame("Highscores");
 	private JPanel scorepanel = new JPanel(){
